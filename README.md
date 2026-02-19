@@ -2,6 +2,24 @@
 
 ![Mockup image](docs/readme/pawsandsnapsmockup.png)
 
+
+
+⚠️ **Note about Deployment**
+Due to external PostgreSQL service changes, the live backend may not work currently. 
+The app runs locally using a PostgreSQL setup — instructions below.
+
+## How to Run Locally
+1. Clone repo
+2. `npm install`
+3. Create `.env` file with API URL
+4. Start frontend: `npm start`
+5. Start backend in its repo:
+   - `python manage.py migrate`
+   - `python manage.py runserver`
+
+
+
+
 🚀 [Deployed Frontend Site](https://pawfect-pics-87d81c100ee5.herokuapp.com/)  
 💻 [Deployed API](https://paws-and-snaps-d602158cc7f7.herokuapp.com/)  
 🔗 [API Repo](https://github.com/sari-rahul/paws-snaps-api)
