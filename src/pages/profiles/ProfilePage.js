@@ -63,7 +63,6 @@ function ProfilePage() {
           setHasLoaded(true);
         }
       } catch (err) {
-        console.log(err);
         if (isMounted) {
           if (err.response && err.response.status === 404) {
             setProfileNotFound(true);

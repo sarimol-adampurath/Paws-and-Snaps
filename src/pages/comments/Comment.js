@@ -47,7 +47,7 @@ const Comment = (props) => {
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
     } catch (err) {
-      console.log(err);
+      // Error deleting comment
     }
   };
 
@@ -63,7 +63,7 @@ const Comment = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // Error liking comment
     }
   };
 
@@ -79,7 +79,7 @@ const Comment = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // Error unliking comment
     }
   };
 

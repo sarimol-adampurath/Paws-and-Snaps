@@ -54,7 +54,7 @@ function ArticlesHomePage() {
           setArticles(filteredData);
           setHasLoaded(true);
         } catch (err) {
-          console.log(err);
+          // Error fetching articles
         }
       };
   

@@ -84,7 +84,6 @@ function ArticleEditForm() {
       ...articleData,
       published: event.target.checked,
     });
-    console.log('unpublished')
   };
 
   const handleSubmit = async (event) => {
@@ -104,13 +103,10 @@ function ArticleEditForm() {
 
       if(published){
           history.push(`/articles/${data.id}`);
-          console.log('edit sucessfull')
       } else {
         history.push("/articles");
-        console.log(published)
       }
     } catch (err) {
-      console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

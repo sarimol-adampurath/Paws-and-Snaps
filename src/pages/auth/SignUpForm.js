@@ -10,11 +10,9 @@ import { Card } from "react-bootstrap";
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal Imports 
 import styles from "../../styles/SignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { useRedirect } from "../../hooks/useRedirect";
 
 
 const SignUpForm = () => {
-  useRedirect('loggedIn')
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -38,7 +36,6 @@ const SignUpForm = () => {
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
-      console.log('redirected')
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -64,7 +61,7 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
           </Form.Group>
-          {errors.username?.map((message, idx) => (
+          {errors?.username?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
               {message}
             </Alert>
@@ -81,7 +78,7 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
           </Form.Group>
-          {errors.password1?.map((message, idx) => (
+          {errors?.password1?.map((message, idx) => (
             <Alert key={idx} variant="warning">
               {message}
             </Alert>
@@ -98,7 +95,7 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
           </Form.Group>
-          {errors.password2?.map((message, idx) => (
+          {errors?.password2?.map((message, idx) => (
             <Alert key={idx} variant="warning">
               {message}
             </Alert>
@@ -110,7 +107,7 @@ const SignUpForm = () => {
           >
               Sign up
           </Button>
-          {errors.non_field_errors?.map((message, idx) => (
+          {errors?.non_field_errors?.map((message, idx) => (
             <Alert key={idx} variant="warning" className="mt-3">
               {message}
             </Alert>

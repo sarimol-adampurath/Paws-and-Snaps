@@ -45,7 +45,10 @@ const SignInForm = () => {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
-      history.goBack();
+      // Add a small delay to ensure state updates before redirect
+      setTimeout(() => {
+        history.push("/intro");
+      }, 100);
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -69,7 +72,7 @@ const SignInForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.username?.map((message, idx) => (
+            {errors?.username?.map((message, idx) => (
               <Alert className={styles.alert} variant="warning" key={idx}>
                 {message}
               </Alert>
@@ -86,7 +89,7 @@ const SignInForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.password1?.map((message, idx) => (
+            {errors?.password?.map((message, idx) => (
               <Alert className={styles.alert} key={idx} variant="warning">
                 {message}
               </Alert>
@@ -98,7 +101,7 @@ const SignInForm = () => {
             >
               Sign in
             </Button>
-            {errors.non_field_errors?.map((message, idx) => (
+            {errors?.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
                 {message}
               </Alert>

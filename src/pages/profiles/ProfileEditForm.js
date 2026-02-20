@@ -48,7 +48,6 @@ const ProfileEditForm = () => {
 
           is_owner ? setProfileData({ name, bio, image, linked_in, facebook, instagram }):history.push("/intro");
         } catch (err) {
-          console.log(err);
           //history.push("/");
         }
       } else {
@@ -87,7 +86,6 @@ const ProfileEditForm = () => {
       }));
       history.goBack();
     } catch (err) {
-      console.log(err);
       setErrors(err.response?.data);
     }
   };

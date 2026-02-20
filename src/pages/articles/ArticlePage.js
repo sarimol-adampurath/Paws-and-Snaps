@@ -58,10 +58,7 @@ function ArticlePage() {
           setArticle({ results: [article] });
           setComments(comments);
           setHasLoaded(true);
-          console.log(article)
-          console.log('comments',comments)
         } catch (err) {
-          console.log(err);
           setHasLoaded(true);
         }
       };
