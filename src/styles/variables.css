@@ -1,0 +1,141 @@
+/* ========================================
+   CSS VARIABLES - DESIGN SYSTEM
+   ======================================== */
+
+:root {
+  /* -------- COLORS -------- */
+  /* Primary Colors */
+  --color-primary-pink: #FFB7CE;
+  --color-primary-light-pink: pink;
+  --color-secondary-beige: #e8cfcf;
+  
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-background-light: rgb(242, 237, 237);
+  --color-border-gray: rgb(206, 205, 205);
+  --color-border-dark-gray: rgb(213, 212, 212);
+  --color-text-dark: black;
+  --color-text-gray: #949496;
+  --color-text-light-gray: rgb(129, 127, 127);
+  --color-icon-border: rgb(0, 0, 0);
+  --color-border-light-gray: grey;
+
+  /* -------- SPACING -------- */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 18px;
+  --spacing-lg: 25px;
+  --spacing-xl: 30px;
+  --spacing-2xl: 50px;
+  --spacing-section: 2%;
+
+  /* -------- TYPOGRAPHY -------- */
+  --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --font-family-anek: 'Anek Devanagari', 'sans serif';
+  --font-family-oswald: 'Oswald', 'sans serif';
+
+  --font-size-base: 16px;
+  --font-size-sm: 15px;
+  --font-size-xs: 10px;
+  --font-size-md: 20px;
+  --font-size-lg: 25px;
+  --font-size-xl: 1.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* -------- TRANSITIONS -------- */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+
+  /* -------- BORDERS & RADIUS -------- */
+  --border-radius-lg: 1.5rem;
+  --border-width-thin: 1px;
+  --box-shadow-light: 0 0 0 .1rem rgb(129, 127, 127);
+
+  /* -------- MEDIA QUERIES (Semantic) -------- */
+  /* Mobile First Approach */
+  --breakpoint-xs: 550px;    /* Small phones */
+  --breakpoint-sm: 600px;    /* Phones */
+  --breakpoint-md: 700px;    /* Small tablets */
+  --breakpoint-lg: 768px;    /* Tablets */
+  --breakpoint-xl: 800px;    /* Large tablets/small desktops */
+
+  /* -------- HEIGHTS -------- */
+  --height-image-large: 500px;
+  --height-image-medium: 250px;
+  --height-image-small: 200px;
+  --height-search-bar: 30px;
+  --height-comment: fit-content;
+  --height-card-title: 50px;
+
+  /* -------- WIDTHS -------- */
+  --width-card-max: 90%;
+  --width-button-default: 50%;
+  --width-button-small: 15%;
+  --width-search-bar-desktop: 50%;
+  --width-full: 100%;
+
+  /* -------- MARGINS/PADDINGS (Grouped by use case) -------- */
+  --padding-nav-link: 18px;
+  --padding-nav-top: 20px;
+  --padding-nav-horizontal: 30px;
+  --padding-nav-vertical: 25px;
+  --padding-section: 1%;
+  --padding-button: 10px 50px;
+  --padding-button-small: 5px;
+
+  /* -------- Z-INDEX -------- */
+  --z-index-dropdown: 10;
+  --z-index-modal: 100;
+}
+
+/* -------- UTILITY CLASSES -------- */
+.word-break {
+  word-break: break-all;
+}
+
+.fit-content {
+  height: fit-content;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.flex-start-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.margin-auto {
+  margin: auto;
+}

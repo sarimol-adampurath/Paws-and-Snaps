@@ -1,14 +1,16 @@
 .CommentForm {
-    background-color: #fff;
-    height: fit-content;
-    padding: 1%;
-    border: 1px solid rgb(206, 205, 205);
+  background-color: var(--color-white);
+  height: fit-content;
+  padding: 1%;
+  border: var(--border-width-thin) solid var(--color-border-gray);
 }
-.CommentForm textarea{
-  background-color: #fff;
+
+.CommentForm textarea {
+  background-color: var(--color-white);
 }
-.Form{
-  border:none !important;
+
+.Form {
+  border: none;
 }
 
 .Button {
@@ -17,7 +19,7 @@
   width: 15%;
   margin: 15px;
 }
-  
+
 .Button:hover {
   cursor: pointer;
 }

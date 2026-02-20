@@ -1,14 +1,14 @@
-.Asset { 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /*height: 70vh;*/
-    object-fit: contain;
-    color: rgb(223, 128, 144) !important;
-  }
-  .Spinner{
-    height:400px;
-    width:400px;
-  }
+.Asset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  color: rgb(223, 128, 144);
+}
+
+.Spinner {
+  height: 400px;
+  width: 400px;
+}
   

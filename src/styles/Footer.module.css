@@ -1,65 +1,66 @@
-.FooterContainer{
-    display: flex;
-    flex-direction: row;
-    align-items:flex-start;
-    justify-content: space-evenly;
-    background-color: #fff;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border: 1px solid rgb(206, 205, 205);
-    padding:0px !important
+.FooterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background-color: var(--color-white);
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  border: var(--border-width-thin) solid var(--color-border-gray);
+  padding: 0;
 }
-.FooterBlocks{
-    width:30%;
+
+.FooterBlocks {
+  width: 30%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  text-align: center;
+  align-items: center;
+}
+
+.IconDiv {
+  background-color: rgb(255, 206, 214);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.IconOutterDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.FooterBlocks p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-dark);
+}
+
+@media screen and (max-width: var(--breakpoint-xl)) {
+  .FooterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .FooterBlocks {
+    width: 50%;
     margin-top: 5%;
     margin-bottom: 3%;
-    text-align: center; 
-    align-items: center;   
+    text-align: center;
+  }
 }
-.IconDiv{
-    background-color: rgb(255, 206, 214);
-    height:50px;
-    width:50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.IconOutterDiv{
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: space-evenly;
-}
-.FooterBlocks p{
-    font-size: 18px;
-    color: black;
-}
-@media screen and (max-width: 800px) {
-    .FooterContainer{
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        justify-content: space-evenly;
-        
-    }
-    .FooterBlocks{
-        width:50%;
-        margin-top: 5%;
-        margin-bottom: 3%;
-        text-align: center;
-        
-    }
-    
-}
-@media screen and (max-width: 800px) {
-    .FooterBlocks{
-        width:100%;
-        margin-top: 5%;
-        margin-bottom: 3%;
-        padding:5%;        
 
-        text-align: center;
-        
-    }
+@media screen and (max-width: 600px) {
+  .FooterBlocks {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    padding: 5%;
+  }
 }

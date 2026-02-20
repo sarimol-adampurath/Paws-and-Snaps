@@ -1,19 +1,19 @@
-.Container{
-    background-color:#ffff;
-    border: 1px solid rgb(206, 205, 205);
-
+.Container {
+  background-color: var(--color-white);
+  border: var(--border-width-thin) solid var(--color-border-gray);
 }
-.CommentContainer{
-    padding: 4% !important;
-    background-color:#ffff;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-    border: 1px solid rgb(206, 205, 205);
 
+.CommentContainer {
+  padding: 4%;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  border: var(--border-width-thin) solid var(--color-border-gray);
 }
-.CommentInfinitescroll{
-    min-width: 100%;
+
+.CommentInfinitescroll {
+  min-width: var(--width-full);
 }

@@ -1,91 +1,101 @@
 .ProfileImage {
-    object-fit: cover;
-    height: 300px;
-    width: 300px;
-    margin-top: 3%;
-    border:10px solid #878484;
-    animation-name: spinImage;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    transform-origin: center; /* Rotate around the center */
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
+  margin-top: 3%;
+  border: 10px solid #878484;
+  animation-name: spinImage;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  transform-origin: center;
+}
+
+@keyframes spinImage {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.SmallCard {
+  position: relative;
+}
+
+.SmallCard:hover {
+  cursor: pointer;
+}
+
+.SmallCard .Badge {
+  position: absolute;
+  top: 5%;
+  z-index: var(--z-index-dropdown);
+}
+
+.SmallCardImage {
+  height: var(--height-image-small);
+  border: var(--border-width-thin) solid var(--color-border-light-gray);
+  border-radius: 0;
+}
+
+.SmallCardTitle {
+  height: var(--height-card-title);
+  overflow: hidden;
+}
+
+.ProfileContainer {
+  background-color: var(--color-white);
+  padding: 0;
+}
+
+.ProfileContainer h3 {
+  text-align: center;
+}
+
+.MemberSince {
+  font-family: var(--font-family-oswald);
+  color: grey;
+}
+
+.Bio {
+  width: var(--width-full);
+  height: fit-content;
+  padding: 2%;
+  margin-top: 1%;
+  text-align: left;
+}
+
+.ContactIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3%;
+}
+
+.ContactIcons i {
+  font-size: 1rem;
+}
+
+.ProfileContactIcons {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.InfiniteScrollOuterdiv {
+  min-width: var(--width-full);
+  height: fit-content;
+}
+
+@media screen and (max-width: 991px) {
+  .ProfileImage {
+    width: 150px;
+    height: 150px;
+    margin-top: 5%;
   }
 
-  @keyframes spinImage {
-    from {
-      transform: rotateY(0deg);
-    }
-    to {
-      transform: rotateY(360deg);
-    }
+  .Bio {
+    padding: 5%;
   }
-  .SmallCard{
-    position:relative;
-  }
-  .SmallCard:hover{
-    cursor: pointer;
-  }
-  .SmallCard .Badge {
-    position: absolute;
-    top: 5%;
-    z-index: 1;
-  }
-  .SmallCardImage{
-    height:200px;
-    border: 1px solid grey !important;
-    border-radius: 0px;
-
-  }
-  .SmallCardTitle{
-    height:50px;
-    overflow: hidden;
-  }
-  .ProfileContainer{
-    background-color: #fff;
-    padding: 0px;
-
-  }
-  .ProfileContainer h3{
-    text-align: center;
-  }
-  .MemberSince{
-    font-family: 'Oswald','sans-serif';
-    color:grey;
-  }
-
-  .Bio{
-    width: 100%;
-    height: fit-content;
-    padding: 2%;
-    margin-top: 1%;
-    text-align: left;
-  }
-  .ContactIcons{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 3%;
-  }
-  .ContactIcons i{
-    font-size: 1rem !important;
-  }
-  .ProfileContactIcons{
-    padding-left: 4%;
-    padding-right: 4%;
-  }
-  .InfiniteScrollOuterdiv{
-    min-width:100%;
-    height: fit-content;
-  }
-
-  
-  @media screen and (max-width: 991px) {
-    .ProfileImage {
-      width: 150px;
-      height: 150px;
-      margin-top: 5%;
-    }
-    .Bio{
-      padding: 5%;
-    }
-  }
+}

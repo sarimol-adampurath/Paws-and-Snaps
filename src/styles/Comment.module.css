@@ -1,79 +1,84 @@
-.Comment{
-  width: 100%;
-  background-color: rgb(242, 237, 237);
-  border:1px solid rgb(213, 212, 212); 
+.Comment {
+  width: var(--width-full);
+  background-color: var(--color-background-light);
+  border: var(--border-width-thin) solid var(--color-border-dark-gray);
   margin-bottom: 2%;
-
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
 .Owner {
-    font-size:20px;
-    font-weight: 600;
-    color: black;
-    margin-right: 8px;
-  }
-  
-.Date {
-  font-weight: lighter;
-  color: #949496;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+  margin-right: 8px;
 }
 
-.OwnerDetails{
+.Date {
+  font-weight: lighter;
+  color: var(--color-text-gray);
+}
+
+.OwnerDetails {
   padding-top: 5%;
   padding-bottom: 2%;
-  width: 100%;
+  width: var(--width-full);
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
-.NameAndTime{
+
+.NameAndTime {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
-.CommentBody{
-  min-width: 100%;
+
+.CommentBody {
+  min-width: var(--width-full);
   padding-left: 5%;
   padding-right: 2%;
   padding-bottom: 2%;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+}
 
+.CommentContent {
+  width: var(--width-full);
 }
-.CommentContent{
-  width:100%;
-}
-.CommentDropDown{
-  padding:0 !important;
+
+.CommentDropDown {
+  padding: 0;
   margin-top: auto;
 }
-.CommentLike{
-  margin-left:3%;
+
+.CommentLike {
+  margin-left: 3%;
 }
-.CommentLike i{
-  font-size: 1.5rem !important;
+
+.CommentLike i {
+  font-size: var(--font-size-xl);
 }
 
 .thumbsUp {
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 
 
-@media (max-width: 700px){
-  .Comment{
+@media (max-width: var(--breakpoint-md)) {
+  .Comment {
     padding-right: 20px;
-    font-size: 15px !important;
+    font-size: var(--font-size-sm);
   }
-  .CommentLike i{
-    font-size: 1rem !important;
+
+  .CommentLike i {
+    font-size: 1rem;
   }
 }

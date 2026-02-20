@@ -1,115 +1,128 @@
-.Article{
-    margin-bottom: 16px;
-    text-align: left;
-    padding-left:50px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-    padding-top: 2%;
-    font-family: 'Anek Devanagari' ,'sans serif';
-  }
-.Articlebackground{
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.Title{
-  text-align: center;
-  font-family: 'Oswald' ,'sans serif';
-}
-.Photo{
-  padding: 1.5%;
-  height:500px;
-  width:100%;
-}
-
-.Content{
-  padding-left:50px;
+.Article {
+  margin-bottom: 16px;
   text-align: left;
-} 
-.Author{
+  padding-left: var(--spacing-2xl);
+  padding-right: var(--spacing-2xl);
+  padding-bottom: var(--spacing-xl);
+  padding-top: var(--spacing-section);
+  font-family: var(--font-family-anek);
+}
+
+.Articlebackground {
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.Title {
+  text-align: center;
+  font-family: var(--font-family-oswald);
+}
+
+.Photo {
+  padding: 1.5%;
+  height: var(--height-image-large);
+  width: var(--width-full);
+}
+
+.Content {
+  padding-left: var(--spacing-2xl);
+  text-align: left;
+}
+
+.Author {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   text-align: left;
   flex-direction: row;
-  height: fit-content;
-  padding-left: 50px;
+  height: var(--height-comment);
+  padding-left: var(--spacing-2xl);
   margin-top: 4%;
-} 
-.AuthorInnerDiv{
+}
+
+.AuthorInnerDiv {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
 }
-.NameAndTime{
+
+.NameAndTime {
   display: flex;
   flex-direction: column;
 }
 
 .Owner {
-  font-size:20px;
-  font-weight: 600;
-  color: black;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
   margin-right: 8px;
 }
 
 .Date {
-  color: #949496;
+  color: var(--color-text-gray);
 }
 
-.Margin{
+.Margin {
   margin: auto;
   margin-right: 0px;
 }
-@media (max-width: 767px) {
+@media (max-width: var(--breakpoint-lg)) {
   .article-preview .Article_Author__EkjDS img,
   .article-preview .Article_Updation__2aOF2,
   .article-preview .Article_Content__1XSO0 
-  .Article_Photo{
-      display: none;
+  .Article_Photo {
+    display: none;
   }
-  .Content{
-    padding-left:0px;
+
+  .Content {
+    padding-left: 0;
   }
 }
-@media (max-width: 550px) {
-  .Content{
-    padding-left:0px;
-    font-size: 10px;
-  } 
-  .Title{
-    font-size: 25px;
+
+@media (max-width: var(--breakpoint-xs)) {
+  .Content {
+    padding-left: 0;
+    font-size: var(--font-size-xs);
   }
-  .Author{
-    padding-left: 0px;
+
+  .Title {
+    font-size: var(--font-size-lg);
+  }
+
+  .Author {
+    padding-left: 0;
     margin-top: 6%;
   }
-  .AuthorInnerDiv{
+
+  .AuthorInnerDiv {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  .Author{
+
+  .Author {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
   }
-  .NameAndTime{
+
+  .NameAndTime {
     align-items: center;
     justify-content: center;
   }
-  .Margin{
+
+  .Margin {
     margin: auto;
   }
-  .Photo{
+
+  .Photo {
     height: 300px;
   }
-  .Article{
+
+  .Article {
     padding-left: 25px;
     padding-right: 25px;
   }
-
 }

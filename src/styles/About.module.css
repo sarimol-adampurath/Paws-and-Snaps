@@ -1,56 +1,61 @@
-.OutterContainer{
-    background-color: rgb(250, 217, 223);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+.OutterContainer {
+  background-color: rgb(250, 217, 223);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
-.CardContainer{
-    width:60%;
-    margin: 1%;
-    text-align: center;
-    background-color: rgb(250, 217, 223);
-    border-radius: 0px !important;
-    border: none;
+
+.CardContainer {
+  width: 60%;
+  margin: 1%;
+  text-align: center;
+  background-color: rgb(250, 217, 223);
+  border-radius: 0;
+  border: none;
 }
 
 .Quote {
-    font-size: 2.7rem;
-    padding:  0;
-    text-align: center;
-    font-family: 'Oswald', 'sans-serif';
-    color: black;
+  font-size: 2.7rem;
+  padding: 0;
+  text-align: center;
+  font-family: var(--font-family-oswald);
+  color: var(--color-text-dark);
 }
 
-.CardText{
-    padding:20px;
-    color: black;
-    font-family: 'Anek Devanagari', 'sans-serif';
+.CardText {
+  padding: 20px;
+  color: var(--color-text-dark);
+  font-family: var(--font-family-anek);
 }
+
 .Link {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .Link a {
-    color: #2142b2;
+  color: #2142b2;
 }
-.Content{
-    font-family: 'Anek Devanagari' ,'sans serif';
-}
-.ButtonContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-@media screen and (max-width: 900px) {
 
-    .OutterContainer h4{
-        font-size: 30px;
-    }
-    .CardContainer{
-        width:100%;
-        margin: 1%;
-        padding : 0px;
-    }
+.Content {
+  font-family: var(--font-family-anek);
+}
+
+.ButtonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .OutterContainer h4 {
+    font-size: 30px;
+  }
+
+  .CardContainer {
+    width: 100%;
+    margin: 1%;
+    padding: 0;
+  }
 }
     

@@ -1,68 +1,65 @@
 .Button {
-  border-radius: 1.5rem;
+  border-radius: var(--border-radius-lg);
   margin: auto;
-  padding: 10px 50px;
-  width: 50%;
-
-  border: 1px solid #aeaeae;
-  background-color: #e8cfcf;
+  padding: var(--padding-button);
+  width: var(--width-button-default);
+  border: var(--border-width-thin) solid #aeaeae;
+  background-color: var(--color-secondary-beige);
   min-width: 75px;
-  font-size: 20px;
-  color:black;
+  font-size: var(--font-size-md);
+  color: var(--color-text-dark);
+}
 
+.ButtonWide {
+  width: var(--width-full);
 }
-.ButtonWide{
-  width:100%;
-}
-.ButtonSmall{
-  width:15%;
+
+.ButtonSmall {
+  width: var(--width-button-small);
 }
   
 .Button:hover {
-    background-color: pink !important;
-    cursor: pointer;
-    color: black;
-    border: 1px solid rgb(129, 127, 127);
-    box-shadow: 0 0 0 .1rem rgb(129, 127, 127) !important;
-  }
-  
-  .Button:hover:active {
-    background-color: pink !important;
-    color: black;
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 0 0 0 .1rem rgb(129, 127, 127) !important;
+  background-color: var(--color-primary-light-pink);
+  cursor: pointer;
+  color: var(--color-text-dark);
+  border: var(--border-width-thin) solid var(--color-text-light-gray);
+  box-shadow: var(--box-shadow-light);
+  transition: background-color var(--transition-fast);
+}
 
+.Button:hover:active {
+  background-color: var(--color-primary-light-pink);
+  color: var(--color-text-dark);
+  border: var(--border-width-thin) solid var(--color-icon-border);
+  box-shadow: var(--box-shadow-light);
+}
 
-  }
-  
-  .Button:active {
-    background-color: pink !important;
-    color: black;
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 0 0 0 .1rem rgb(129, 127, 127) !important;
+.Button:active {
+  background-color: var(--color-primary-light-pink);
+  color: var(--color-text-dark);
+  border: var(--border-width-thin) solid var(--color-icon-border);
+  box-shadow: var(--box-shadow-light);
+}
 
-  }
-  
-  .Button:focus {
-    border: none !important;
-    background-color: pink !important;
-    color: black;
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 0 0 0 .1rem rgb(129, 127, 127) !important;
+.Button:focus {
+  border: none;
+  background-color: var(--color-primary-light-pink);
+  color: var(--color-text-dark);
+  border: var(--border-width-thin) solid var(--color-icon-border);
+  box-shadow: var(--box-shadow-light);
+}
 
-  }
+.Wide {
+  padding: var(--padding-button);
+  width: var(--width-full);
+}
   
-  .Wide {
-    padding: 10px 50px;
-    width: 100%;
+@media (max-width: var(--breakpoint-md)) {
+  .Button {
+    padding: var(--padding-button-small);
+    font-size: var(--font-size-sm);
   }
-  
-  @media (max-width: 700px){
-   .Button{
-    padding: 5px;
-    font-size: 15px;
-   } 
-  }
+}
   
   
   

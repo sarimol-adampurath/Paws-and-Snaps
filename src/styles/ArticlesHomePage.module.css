@@ -1,47 +1,52 @@
-.Container{
-  background-color: #ffff;
+.Container {
+  background-color: var(--color-white);
 }
-.Card{
-  width:90%;
-  margin-left: 5%;
-  border: none !important;
-  border-radius: none !important;
-}
-.SmallCardImage{
-  height:200px;
-  border: 1px solid grey !important;
 
+.Card {
+  width: var(--width-card-max);
+  margin-left: 5%;
+  border: none;
+  border-radius: none;
 }
-.SmallCard{
-  max-width: 100%;
+
+.SmallCardImage {
+  height: var(--height-image-small);
+  border: var(--border-width-thin) solid var(--color-border-light-gray);
 }
-.SmallCard:hover{
+
+.SmallCard {
+  max-width: var(--width-full);
+}
+
+.SmallCard:hover {
   cursor: pointer;
 }
-.SmallCardTitle{
-  height:50px;
+
+.SmallCardTitle {
+  height: var(--height-card-title);
   overflow: hidden;
 }
 
-.SmallScreenCardImage{
-  height:250px;
+.SmallScreenCardImage {
+  height: var(--height-image-medium);
   object-fit: cover;
 }
-.SearchBar{
-  height:30px !important;
-  width:50%;
-  margin:auto;
+
+.SearchBar {
+  height: var(--height-search-bar);
+  width: var(--width-search-bar-desktop);
+  margin: auto;
   margin-top: 2%;
   margin-bottom: 2%;
 }
-.InfiniteScrollOuterDiv{
-  min-width:100%;
+
+.InfiniteScrollOuterDiv {
+  min-width: var(--width-full);
   height: fit-content;
 }
 
-@media (max-width: 800px){
-  .SearchBar{
+@media (max-width: var(--breakpoint-xl)) {
+  .SearchBar {
     margin-bottom: 3%;
-  
   }
 }

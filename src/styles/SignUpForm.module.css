@@ -1,83 +1,78 @@
 .Input {
-    width:60%;
-    border: 1px solid rgb(254, 166, 180);
-    border: 1px solid rgb(245, 146, 163) !important;
-    background-color: #ea9fac !important;
-    box-sizing: border-box;
-    border-radius: 50px;
-    font-family: 'Anek Devanagari' ,'sans serif';
-    text-align: center;
-    padding: 10px;
-    margin: auto;
+  width: 60%;
+  border: var(--border-width-thin) solid rgb(254, 166, 180);
+  border: var(--border-width-thin) solid rgb(245, 146, 163);
+  background-color: #ea9fac;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: var(--font-family-anek);
+  text-align: center;
+  padding: 10px;
+  margin: auto;
 }
 
 .Header {
-    font-size: 2.7rem;
-    line-height: 19px;
-    text-align: center;
-    color: black;
+  font-size: 2.7rem;
+  line-height: 19px;
+  text-align: center;
+  color: var(--color-text-dark);
 }
+
 .Link {
-    font-size: 20px !important;
-    text-decoration: none;
-    text-align: center;
-    display: block;
+  font-size: var(--font-size-md);
+  text-decoration: none;
+  text-align: center;
+  display: block;
 }
-.SignUpForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+.SignUpForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-  
+
 .Link span {
-    color:#042eff ;
-}
-.SignUpContainer{
-    padding:8% !important;
-    background-image: url('../assets/bcg-pawprint.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  color: #042eff;
 }
 
-.CardContainer{
-    display: flex;
-    justify-content: center !important;
-    flex-direction: column !important;
-    background-color: #dc8b98;
-    width:60%;
-    height: fit-content;
-    padding:4% !important;
-    margin: auto !important;
-    background-color: pink !important;
-    box-shadow: 0 4px 10px rgba(74, 74, 74, 0.1); /* Adjust the shadow values as needed */
-    overflow: auto;
-
+.SignUpContainer {
+  padding: 8%;
+  background-image: url('../assets/bcg-pawprint.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.CardContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--color-primary-light-pink);
+  width: 60%;
+  height: fit-content;
+  padding: 4%;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(74, 74, 74, 0.1);
+  overflow: auto;
+}
 
 @media screen and (max-width: 500px) {
+  .Header {
+    font-size: 1.7rem;
+    line-height: 10px;
+  }
 
-    .Header {
-        font-size: 1.7rem;
-        line-height: 10px;
-    }
-    .CardContainer{
-        width:100%;
-        
-    }
-
+  .CardContainer {
+    width: 100%;
+  }
 }
-@media screen and (max-width: 800px) {
 
-    .CardContainer{
-        width:100%;
-
-    }
-
+@media screen and (max-width: var(--breakpoint-xl)) {
+  .CardContainer {
+    width: 100%;
+  }
 }

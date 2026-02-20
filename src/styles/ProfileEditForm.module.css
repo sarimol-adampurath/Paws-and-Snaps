@@ -1,12 +1,12 @@
-.EditFormContainer{
-    background-color: #fff;
-    padding-bottom: 3%;
+.EditFormContainer {
+  background-color: var(--color-white);
+  padding-bottom: 3%;
 }
 
-.UsernameEditForm{
-    height:80vh;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.UsernameEditForm {
+  height: 80vh;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
