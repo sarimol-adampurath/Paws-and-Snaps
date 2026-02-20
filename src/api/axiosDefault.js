@@ -1,6 +1,9 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:8000/";
+// Use production API URL if available, fallback to localhost for development
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000/";
+
+axios.defaults.baseURL = API_URL;
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.withCredentials = true;
 axios.defaults.xsrfCookieName = 'csrftoken';
