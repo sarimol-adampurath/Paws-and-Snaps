@@ -67,6 +67,14 @@
     justify-content: center;
     text-align: center;
   }
+
+  .DisplayColumnSmallScreen .NavLink {
+    padding: 0 !important;
+  }
+
+  .DisplayColumnSmallScreen .padding {
+    padding: 0 !important;
+  }
 }
 
 @media screen and (max-width: var(--breakpoint-xl)) {
@@ -103,13 +111,5 @@
     font-weight: var(--font-weight-medium);
     padding-top: 0;
     padding-bottom: 0;
-  }
-  .NavLink {
-    padding: 0 !important;
-  }
-
-  .padding {
-    padding-left: 0 !important;
-    padding-top: 0 !important;
   }
 }
