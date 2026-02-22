@@ -73,7 +73,7 @@
   }
   .Navbar .NavContainer {
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
     background-color: var(--color-background-light);
     border-top: var(--border-width-thin) solid var(--color-border-gray);
