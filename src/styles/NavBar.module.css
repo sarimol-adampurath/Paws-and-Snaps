@@ -71,4 +71,16 @@
   .Container {
     padding: 0;
   }
+  .Navbar .NavContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background-light);
+    border-top: var(--border-width-thin) solid var(--color-border-gray);
+    border-bottom: var(--border-width-thin) solid var(--color-border-gray);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-medium);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }

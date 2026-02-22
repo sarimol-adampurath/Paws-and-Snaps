@@ -57,6 +57,12 @@
 }
 
 @media screen and (max-width: 600px) {
+  .FooterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
   .FooterBlocks {
     width: 100%;
     margin-top: 5%;
