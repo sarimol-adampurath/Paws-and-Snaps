@@ -105,6 +105,11 @@
     padding-bottom: 0;
   }
   .NavLink {
-    padding: var(--padding-nav-link-sm) !important;
+    padding: 0 !important;
+  }
+
+  .padding {
+    padding-left: 0 !important;
+    padding-top: 0 !important;
   }
 }
