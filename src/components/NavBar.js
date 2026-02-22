@@ -101,11 +101,12 @@ const NavBar = () => {
       <Navbar expanded={expanded} className={styles.NavBar} expand="md" >
         <Container className={styles.NavContainer}>
           <Navbar.Toggle 
+          className={styles.NavToggle}
           aria-controls="basic-navbar-nav" 
           ref={ref}
           onClick={() => setExpanded(!expanded)}/>
 
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse className={styles.NavCollapse} id="basic-navbar-nav">
             <Nav className={styles.NavbarOutterContainer}>
               <div className={styles.DisplayColumnSmallScreen} >
                 {currentUser ? loggedInIcons : loggedOutIcons}

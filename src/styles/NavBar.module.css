@@ -48,6 +48,27 @@
  margin: auto;
 }
 
+.NavToggle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: var(--breakpoint-md)) {
+  .NavContainer {
+    width: 100%;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .NavCollapse {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: var(--breakpoint-xl)) {
   .NavBar {
     display: flex;
