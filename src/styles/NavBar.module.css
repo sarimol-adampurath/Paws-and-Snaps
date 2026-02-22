@@ -72,9 +72,9 @@
     padding: 0;
   }
   .Navbar .NavContainer {
-    display: flex;
+    display: flex !important;
     justify-content: center !important;
-    align-items: center;
+    align-items: center !important;
     background-color: var(--color-background-light);
     border-top: var(--border-width-thin) solid var(--color-border-gray);
     border-bottom: var(--border-width-thin) solid var(--color-border-gray);
@@ -84,6 +84,6 @@
     padding-bottom: 0;
   }
   .NavLink {
-  padding: var(--padding-nav-link-sm);
-}
+    padding: var(--padding-nav-link-sm) !important;
+  }
 }
