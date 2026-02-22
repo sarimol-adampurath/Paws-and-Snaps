@@ -54,7 +54,7 @@
   margin-right: auto;
 }
 
-@media screen and (max-width: var(--breakpoint-md)) {
+@media screen and (max-width: var(--breakpoint-sm)) {
   .NavContainer {
     width: 100%;
     flex-direction: column;
@@ -80,6 +80,13 @@
     display: block;
     width: 100%;
     text-align: center;
+  }
+
+  .NavbarOutterContainer .nav-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0 !important;
   }
 
   .DisplayColumnSmallScreen .NavLink {
