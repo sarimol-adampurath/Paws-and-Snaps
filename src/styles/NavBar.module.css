@@ -83,4 +83,7 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+  .NavLink {
+  padding: var(--padding-nav-link-sm);
+}
 }

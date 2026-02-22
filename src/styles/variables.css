@@ -80,6 +80,7 @@
 
   /* -------- MARGINS/PADDINGS (Grouped by use case) -------- */
   --padding-nav-link: 18px;
+  --padding-nav-link-sm: 9px;
   --padding-nav-top: 20px;
   --padding-nav-horizontal: 30px;
   --padding-nav-vertical: 25px;
