@@ -31,7 +31,18 @@ export const setTokenTimestamp = (data) => {
 };
 
 export const shouldRefreshToken = () => {
-  return !!localStorage.getItem("refreshTokenTimestamp");
+  const refreshTokenTimestamp = localStorage.getItem("refreshTokenTimestamp");
+  if (!refreshTokenTimestamp) {
+    return false;
+  }
+
+  const timestamp = Number(refreshTokenTimestamp);
+  if (Number.isNaN(timestamp)) {
+    return false;
+  }
+
+  // JWT exp timestamps are in seconds.
+  return timestamp > Date.now() / 1000;
 };
 
 export const removeTokenTimestamp = () => {

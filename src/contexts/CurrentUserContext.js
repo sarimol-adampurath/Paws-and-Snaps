@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefault";
 import { useHistory } from "react-router";
@@ -15,11 +15,15 @@ export const CurrentUserProvider = ({ children }) => {
   const history = useHistory();
 
   const handleMount = async () => {
+    if (!shouldRefreshToken()) {
+      return;
+    }
+
     try {
       const { data } = await axiosRes.get("dj-rest-auth/user/");
       setCurrentUser(data);
     } catch (err) {
-      // Handle user fetch error silently
+      removeTokenTimestamp();
     }
   };
 
@@ -27,8 +31,8 @@ export const CurrentUserProvider = ({ children }) => {
     handleMount();
   }, []);
 
-  useMemo(() => {
-    axiosReq.interceptors.request.use(
+  useEffect(() => {
+    const requestInterceptor = axiosReq.interceptors.request.use(
       async (config) => {
         if (shouldRefreshToken()) {
           try {
@@ -50,11 +54,17 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(err);
       }
     );
-// Response Interceptor
-    axiosRes.interceptors.response.use(
+
+    const responseInterceptor = axiosRes.interceptors.response.use(
       (response) => response,
       async (err) => {
-        if (err.response?.status === 401) {
+        const originalRequest = err.config;
+        const isUnauthorized = err.response?.status === 401;
+        const isRefreshRequest = originalRequest?.url?.includes("token/refresh");
+
+        if (isUnauthorized && shouldRefreshToken() && !isRefreshRequest && !originalRequest?._retry) {
+          originalRequest._retry = true;
+
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (refreshErr) {
@@ -67,11 +77,18 @@ export const CurrentUserProvider = ({ children }) => {
             removeTokenTimestamp();
             return Promise.reject(refreshErr);
           }
-          return axios(err.config);
+
+          return axiosReq(originalRequest);
         }
+
         return Promise.reject(err);
       }
     );
+
+    return () => {
+      axiosReq.interceptors.request.eject(requestInterceptor);
+      axiosRes.interceptors.response.eject(responseInterceptor);
+    };
   }, [history]);
   
   return (
