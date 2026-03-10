@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Imports from React Bootstrap 
-import {Form,Button,Container,Alert,} from "react-bootstrap";
+import {Form,Button,Container,Alert,InputGroup,} from "react-bootstrap";
 import { Card } from "react-bootstrap";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal Imports 
@@ -21,6 +21,8 @@ const SignUpForm = () => {
   const { username, password1, password2 } = signUpData;
 
   const [errors, setErrors] = useState({});
+  const [showPassword1, setShowPassword1] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
 
   const history = useHistory();
 
@@ -69,14 +71,23 @@ const SignUpForm = () => {
 
           <Form.Group controlId="password1">
             <Form.Label className="d-none">Password</Form.Label>
-            <Form.Control
-              className={styles.Input}
-              type="password"
-              placeholder="Password"
-              name="password1"
-              value={password1}
-              onChange={handleChange}
-            />
+            <InputGroup>
+              <Form.Control
+                className={styles.Input}
+                type={showPassword1 ? "text" : "password"}
+                placeholder="Password"
+                name="password1"
+                value={password1}
+                onChange={handleChange}
+              />
+              <InputGroup.Text
+                onClick={() => setShowPassword1(!showPassword1)}
+                style={{ cursor: "pointer", userSelect: "none" }}
+                title={showPassword1 ? "Hide password" : "Show password"}
+              >
+                {showPassword1 ? "🙈" : "👁️"}
+              </InputGroup.Text>
+            </InputGroup>
           </Form.Group>
           {errors?.password1?.map((message, idx) => (
             <Alert key={idx} variant="warning">
@@ -86,14 +97,23 @@ const SignUpForm = () => {
 
           <Form.Group controlId="password2">
             <Form.Label className="d-none">Confirm password</Form.Label>
-            <Form.Control
-              className={styles.Input}
-              type="password"
-              placeholder="Confirm password"
-              name="password2"
-              value={password2}
-              onChange={handleChange}
-            />
+            <InputGroup>
+              <Form.Control
+                className={styles.Input}
+                type={showPassword2 ? "text" : "password"}
+                placeholder="Confirm password"
+                name="password2"
+                value={password2}
+                onChange={handleChange}
+              />
+              <InputGroup.Text
+                onClick={() => setShowPassword2(!showPassword2)}
+                style={{ cursor: "pointer", userSelect: "none" }}
+                title={showPassword2 ? "Hide password" : "Show password"}
+              >
+                {showPassword2 ? "🙈" : "👁️"}
+              </InputGroup.Text>
+            </InputGroup>
           </Form.Group>
           {errors?.password2?.map((message, idx) => (
             <Alert key={idx} variant="warning">

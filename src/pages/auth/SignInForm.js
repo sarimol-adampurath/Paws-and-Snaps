@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import { Card } from "react-bootstrap";
+import { Card, InputGroup } from "react-bootstrap";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal Imports 
 import styles from "../../styles/SignInForm.module.css";
@@ -28,6 +28,7 @@ const SignInForm = () => {
   const { username, password } = signInData;
 
   const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
 
   const history = useHistory();
 
@@ -80,14 +81,23 @@ const SignInForm = () => {
 
             <Form.Group controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-              />
+              <InputGroup>
+                <Form.Control
+                  className={styles.Input}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                />
+                <InputGroup.Text
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{ cursor: "pointer", userSelect: "none" }}
+                  title={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? "🙈" : "👁️"}
+                </InputGroup.Text>
+              </InputGroup>
             </Form.Group>
             {errors?.password?.map((message, idx) => (
               <Alert className={styles.alert} key={idx} variant="warning">
