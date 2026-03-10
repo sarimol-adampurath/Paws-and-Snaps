@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
-import { shouldRefreshToken } from "../utils/utils";
+import { logAuthIssue, shouldRefreshToken } from "../utils/utils";
 
 export const useRedirect = (userAuthStatus) => {
   const history = useHistory();
@@ -25,6 +25,7 @@ export const useRedirect = (userAuthStatus) => {
           history.push('/intro');
         }
       } catch (err) {
+        logAuthIssue("redirect-refresh-failed", err);
         // if the user is not logged in, the following code will run
         if (userAuthStatus === 'loggedOut'  && !currentUser) {
           history.push('/');

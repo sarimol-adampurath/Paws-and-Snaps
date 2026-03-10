@@ -48,3 +48,25 @@ export const shouldRefreshToken = () => {
 export const removeTokenTimestamp = () => {
   localStorage.removeItem("refreshTokenTimestamp");
 };
+
+export const logAuthIssue = (scope, err) => {
+  const status = err?.response?.status;
+  const url = err?.config?.url || "unknown-url";
+  const issueKey = `authIssue:${scope}:${status || "unknown"}:${url}`;
+
+  // In development, always log to speed up debugging.
+  if (process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.warn(`[auth] ${scope}`, { status, url, message: err?.message });
+    return;
+  }
+
+  // In production, log each issue shape once per tab session.
+  if (sessionStorage.getItem(issueKey)) {
+    return;
+  }
+
+  sessionStorage.setItem(issueKey, "1");
+  // eslint-disable-next-line no-console
+  console.warn(`[auth] ${scope}`, { status, url });
+};
