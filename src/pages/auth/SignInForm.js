@@ -62,7 +62,7 @@ const SignInForm = () => {
         <br />
         <br />
         <Form onSubmit={handleSubmit} className={styles.SignInForm}>
-            <Form.Group controlId="username">
+            <Form.Group className={styles.FieldGroup} controlId="username">
               <Form.Label className="d-none">username</Form.Label>
               <Form.Control
                 className={styles.Input}
@@ -79,11 +79,11 @@ const SignInForm = () => {
               </Alert>
             ))}
 
-            <Form.Group controlId="password">
+            <Form.Group className={styles.FieldGroup} controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
-              <InputGroup>
+              <InputGroup className={styles.PasswordGroup}>
                 <Form.Control
-                  className={styles.Input}
+                  className={`${styles.Input} ${styles.PasswordInput}`}
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   name="password"
@@ -91,8 +91,8 @@ const SignInForm = () => {
                   onChange={handleChange}
                 />
                 <InputGroup.Text
+                  className={styles.PasswordToggle}
                   onClick={() => setShowPassword(!showPassword)}
-                  style={{ cursor: "pointer", userSelect: "none" }}
                   title={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? "🙈" : "👁️"}

@@ -1,5 +1,5 @@
 .Input {
-  width: 60%;
+  width: 100%;
   border: var(--border-width-thin) solid rgb(254, 166, 180);
   border: var(--border-width-thin) solid rgb(245, 146, 163);
   background-color: #ea9fac;
@@ -8,7 +8,32 @@
   font-family: var(--font-family-anek);
   text-align: center;
   padding: 10px;
-  margin: auto;
+  margin: 0;
+}
+
+.FieldGroup {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.PasswordGroup {
+  width: 100%;
+}
+
+.PasswordInput {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
+.PasswordToggle {
+  border: var(--border-width-thin) solid rgb(245, 146, 163);
+  border-left: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #ea9fac;
+  cursor: pointer;
+  user-select: none;
 }
 
 .Header {

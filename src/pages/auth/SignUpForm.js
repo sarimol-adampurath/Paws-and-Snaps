@@ -52,7 +52,7 @@ const SignUpForm = () => {
         <br />
         <br />
         <Form onSubmit={handleSubmit} className={styles.SignUpForm}>
-          <Form.Group controlId="username">
+          <Form.Group className={styles.FieldGroup} controlId="username">
             <Form.Label className="d-none">username</Form.Label>
             <Form.Control
               className={styles.Input}
@@ -69,11 +69,11 @@ const SignUpForm = () => {
             </Alert>
           ))}
 
-          <Form.Group controlId="password1">
+          <Form.Group className={styles.FieldGroup} controlId="password1">
             <Form.Label className="d-none">Password</Form.Label>
-            <InputGroup>
+            <InputGroup className={styles.PasswordGroup}>
               <Form.Control
-                className={styles.Input}
+                className={`${styles.Input} ${styles.PasswordInput}`}
                 type={showPassword1 ? "text" : "password"}
                 placeholder="Password"
                 name="password1"
@@ -81,8 +81,8 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
               <InputGroup.Text
+                className={styles.PasswordToggle}
                 onClick={() => setShowPassword1(!showPassword1)}
-                style={{ cursor: "pointer", userSelect: "none" }}
                 title={showPassword1 ? "Hide password" : "Show password"}
               >
                 {showPassword1 ? "🙈" : "👁️"}
@@ -95,11 +95,11 @@ const SignUpForm = () => {
             </Alert>
           ))}
 
-          <Form.Group controlId="password2">
+          <Form.Group className={styles.FieldGroup} controlId="password2">
             <Form.Label className="d-none">Confirm password</Form.Label>
-            <InputGroup>
+            <InputGroup className={styles.PasswordGroup}>
               <Form.Control
-                className={styles.Input}
+                className={`${styles.Input} ${styles.PasswordInput}`}
                 type={showPassword2 ? "text" : "password"}
                 placeholder="Confirm password"
                 name="password2"
@@ -107,8 +107,8 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
               <InputGroup.Text
+                className={styles.PasswordToggle}
                 onClick={() => setShowPassword2(!showPassword2)}
-                style={{ cursor: "pointer", userSelect: "none" }}
                 title={showPassword2 ? "Hide password" : "Show password"}
               >
                 {showPassword2 ? "🙈" : "👁️"}
