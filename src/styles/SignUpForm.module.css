@@ -13,7 +13,11 @@
 
 .FieldGroup {
   width: 60%;
-  margin: 0 auto;
+  margin: 0 auto 16px;
+}
+
+.Margin {
+  margin-top: 14px;
 }
 
 .PasswordGroup {
