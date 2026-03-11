@@ -9,7 +9,7 @@
 
 
 
-🚀 [Deployed Frontend Site](https://paws-and-snaps.onrender.com/)  
+🚀 [Deployed Frontend Site](https://paws-and-snaps-clh3-e70gcplq7-sarimol-adampuraths-projects.vercel.app/)  
 💻 [Deployed API](https://paws-snaps-api-1.onrender.com/)  
 🔗 [API Repo](https://github.com/sari-rahul/paws-snaps-api)
 
